@@ -363,6 +363,26 @@
             border-left: 4px solid #f59e0b;
         }
 
+        /* Formation display */
+        .formation {
+            background: #1a2744;
+            color: #e8e8e8;
+            padding: 24px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 15px 0;
+            white-space: pre;
+            line-height: 1.8;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .formation .pos-fw { color: #e74c3c; font-weight: 700; }
+        .formation .pos-mf { color: #3498db; font-weight: 700; }
+        .formation .pos-df { color: #2ecc71; font-weight: 700; }
+        .formation .pos-gk { color: #f39c12; font-weight: 700; }
+
         /* Print */
         @media print {
             nav { display: none; }
@@ -378,7 +398,6 @@
             .hero { padding: 40px 20px; }
             .hero h1 { font-size: 28px; }
             .section { padding: 30px 20px; }
-            .cta-section { padding: 40px 20px; }
         }
 
         /* Hook callout */
@@ -542,112 +561,29 @@
             transform: translateY(0);
         }
 
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 50%, var(--accent) 100%);
-            color: #fff;
-            padding: 80px 60px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            border: 60px solid rgba(255,255,255,0.02);
-        }
-
-        .cta-section::after {
-            content: '';
-            position: absolute;
-            bottom: -20%;
-            right: -5%;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border: 40px solid rgba(255,255,255,0.02);
-        }
-
-        .cta-btn {
-            display: inline-block;
-            padding: 20px 60px;
-            background: var(--accent);
-            color: #fff;
-            font-size: 20px;
-            font-weight: 800;
+        /* Viral CTA */
+        .viral-cta {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f3460 50%, #16213e 100%);
             border-radius: 12px;
-            text-decoration: none;
-            transition: all 0.3s;
-            box-shadow: 0 6px 30px rgba(192,57,43,0.4);
-            letter-spacing: 1px;
+            padding: 40px;
+            margin: 30px 0;
+            text-align: center;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 40px rgba(192,57,43,0.6);
-            background: #e74c3c;
+        .viral-cta h3 {
+            color: var(--gold);
+            border: none;
+            padding: 0;
+            font-size: 22px;
+            margin: 0 0 16px;
         }
 
-        /* Teaser TOC */
-        .toc-teaser {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
-            margin: 30px auto;
-            max-width: 900px;
-            text-align: left;
-        }
-
-        .toc-teaser-item {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 8px;
-            padding: 16px 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .toc-teaser-item .toc-num {
-            background: var(--gold);
-            color: #000;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .toc-teaser-item .toc-text {
-            font-size: 14px;
-            color: rgba(255,255,255,0.85);
-            line-height: 1.5;
-        }
-
-        /* Blur overlay for teaser */
-        .content-fade {
-            position: relative;
-        }
-
-        .content-fade::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 120px;
-            background: linear-gradient(transparent, var(--light));
-            pointer-events: none;
+        .viral-cta p {
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto 8px;
         }
     </style>
 </head>
@@ -660,17 +596,32 @@
         <p>World Cup Tactical Plan</p>
     </div>
 
-    <div class="section-label">Preview</div>
+    <div class="section-label">INTRO</div>
     <a href="#hook">なぜ日本はW杯で勝てたのか</a>
-    <a href="#inverted-fb">偽SB革命</a>
-    <a href="#cutback">三笘のカットバック</a>
+    <a href="#executive-summary">エグゼクティブサマリー</a>
 
-    <div class="section-label">完全版</div>
-    <a href="#full-version">完全版の目次</a>
-    <a href="https://note.com/pokano_ai" target="_blank" style="color:var(--gold);">noteで読む &rarr;</a>
+    <div class="section-label">ANALYSIS</div>
+    <a href="#world-trends">世界の戦術トレンド</a>
+    <a href="#football-theory">最新フットボール理論</a>
+    <a href="#japan-analysis">日本代表スカッド分析</a>
 
-    <div class="section-label">その他</div>
-    <a href="#faq">よくある質問（FAQ）</a>
+    <div class="section-label">TACTICS</div>
+    <a href="#primary-system">主戦術システム</a>
+    <a href="#secondary-system">プランB/C</a>
+    <a href="#attack">攻撃原則</a>
+    <a href="#defense">守備原則</a>
+    <a href="#transition">トランジション</a>
+    <a href="#setpiece">セットプレー</a>
+
+    <div class="section-label">STRATEGY</div>
+    <a href="#opponent-tactics">対戦相手別戦術</a>
+    <a href="#gamestate">ゲームステート管理</a>
+    <a href="#squad">スカッド構成26名</a>
+    <a href="#physical">フィジカル管理</a>
+    <a href="#tournament">大会マネジメント</a>
+
+    <div class="section-label">INFO</div>
+    <a href="#faq">FAQ</a>
     <a href="#related">関連記事</a>
 </nav>
 
@@ -687,10 +638,15 @@
         <span>Ver. 1.0</span>
     </div>
     <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
-        <a href="https://note.com/pokano_ai" target="_blank" style="padding:10px 24px;background:var(--accent);color:#fff;font-weight:700;font-size:13px;border-radius:8px;text-decoration:none;">完全版をnoteで読む &rarr;</a>
+        <a href="https://twitter.com/intent/tweet?text=%E3%81%9F%E3%81%A0%E3%81%AE%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E5%A5%BD%E3%81%8D%E3%81%8CAI%E3%81%AB%E8%80%83%E3%81%88%E3%81%95%E3%81%9B%E3%81%9F%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8W%E6%9D%AF%E6%88%A6%E8%A1%93%E3%83%97%E3%83%A9%E3%83%B3&url=https://kanesaka849.github.io/japan-wc-tactics/&via=pokano_ai" target="_blank" style="padding:10px 24px;background:#000;color:#fff;font-weight:700;font-size:13px;border-radius:8px;text-decoration:none;">&#120143; シェア</a>
         <a href="https://www.buymeacoffee.com/kanesaka849" target="_blank" style="padding:10px 24px;background:#FFDD00;color:#000;font-weight:700;font-size:13px;border-radius:8px;text-decoration:none;">&#9749; 役に立ったらコーヒー1杯</a>
-        <a href="https://twitter.com/intent/tweet?text=%E3%81%9F%E3%81%A0%E3%81%AE%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E5%A5%BD%E3%81%8D%E3%81%8CAI%E3%81%AB%E8%80%83%E3%81%88%E3%81%95%E3%81%9B%E3%81%9F%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8W%E6%9D%AF%E6%88%A6%E8%A1%93%E3%83%97%E3%83%A9%E3%83%B3&url=https://kanesaka849.github.io/japan-wc-tactics/&via=jk_ai_lab" target="_blank" style="padding:10px 24px;background:#000;color:#fff;font-weight:700;font-size:13px;border-radius:8px;text-decoration:none;">&#120143; シェア</a>
     </div>
+</div>
+
+<!-- Pokano開設記念バナー -->
+<div style="background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:0;padding:20px;text-align:center;border-bottom:1px solid #f59e0b;">
+    <p style="font-size:18px;font-weight:800;color:#92400e;margin-bottom:4px;">&#x1F4E2; Pokano開設記念 特別無料公開</p>
+    <p style="font-size:13px;color:#a16207;">この記事は500円相当の内容ですが、Pokano開設記念として無料で全文公開しています。<br>気に入ったらフォローで応援してください&#x1F64F;</p>
 </div>
 
 <!-- ============================================ -->
@@ -713,141 +669,676 @@
 </div>
 
 <!-- ============================================ -->
-<!-- なるほど1: 偽SB革命 -->
+<!-- Executive Summary -->
 <!-- ============================================ -->
-<div id="inverted-fb" class="section">
-    <h2 class="section-title">偽SB（インバーテッドフルバック）革命</h2>
-    <p class="section-lead">世界のトップチームが採用し始めた戦術革命。なぜ日本代表にこそ、この戦術が必要なのか。</p>
+<div id="executive-summary" class="section">
+    <h2 class="section-title">エグゼクティブサマリー</h2>
+    <p class="section-lead">30,000字を超える分析の結論を、まず3分で掴む。</p>
+
+    <p>2022年カタールW杯で日本代表はドイツ、スペインという優勝経験国を撃破した。しかしクロアチア戦でPK負け。「勝てるチーム」であることは証明したが、「勝ち切るチーム」にはなれなかった。</p>
+
+    <p>2026年大会に向けた本分析の結論は以下の3点に集約される：</p>
 
     <div class="card-grid">
         <div class="card" style="border-left:4px solid var(--accent);">
             <div class="card-header">
-                <div class="card-icon" style="background:#e74c3c;">革</div>
-                <h4>サッカーの常識を覆す配置転換</h4>
+                <div class="card-icon" style="background:#e74c3c;">1</div>
+                <h4>可変システムの常態化</h4>
             </div>
-            <p>サイドバックがビルドアップ時にタッチライン沿いではなく、<strong>ピッチ中央に移動</strong>して中盤の数的優位を作る。アルテタ（アーセナル）とグアルディオラ（マンチェスター・シティ）が先駆け、今や欧州のトップクラブの主流になりつつある。</p>
-            <p>従来の「サイドバック=サイドを上下動する選手」という常識を完全に破壊した、現代サッカー最大の戦術イノベーションだ。</p>
+            <p>守備時4-2-3-1、攻撃時3-2-4-1への可変を「緊急措置」ではなく「デフォルト」にする。冨安の偽SBがその鍵を握る。2022年の後半からの3バック化という「奇策」を、90分間使える「基本戦術」に昇華させる。</p>
         </div>
         <div class="card" style="border-left:4px solid #3b82f6;">
             <div class="card-header">
-                <div class="card-icon" style="background:#3498db;">日</div>
-                <h4>なぜ日本に最適なのか</h4>
+                <div class="card-icon" style="background:#3498db;">2</div>
+                <h4>カットバック中心の攻撃設計</h4>
             </div>
-            <p><strong>冨安健洋</strong>はアーセナルでまさにこの役割を高いレベルでこなしている。知性、対人守備力、そしてCBもSBもこなすポリバレンス性。この経験を代表にそのまま転用できるため、<strong>適応コストが極めて低い</strong>。</p>
-            <p>結果、守備時は4バックの安定性を保ちつつ、攻撃時は3バック化して5レーンを支配する -- 守備の堅さと攻撃の厚みを同時に手に入れることができる。</p>
+            <p>日本の弱点である空中戦を回避し、xG効率が最も高いカットバックを攻撃の主軸に据える。三笘、久保、伊東のドリブル突破力を最大化するファイナルサード攻略プラン。</p>
+        </div>
+        <div class="card" style="border-left:4px solid #27ae60;">
+            <div class="card-header">
+                <div class="card-icon" style="background:#27ae60;">3</div>
+                <h4>ゲームステートの体系化</h4>
+            </div>
+            <p>2022年は「感覚的に」成功した試合中のシステム変更を、2026年では「全選手が自動判断できるマトリクス」に体系化する。スコア状況×時間帯×対戦相手タイプの3軸で戦い方を事前設計。</p>
         </div>
     </div>
 
-    <h3>4-2-3-1 から 3-2-4-1 への可変</h3>
-    <p>ボール保持時、左SBの冨安がCBラインに吸収され、3バック化。右SBは高い位置を取り、両ウイングが幅を作る。中盤は2枚のピボットが安定を保ちながら、トップ下が自由に動き回る。</p>
-    <p>この可変により、日本は<strong>守備時4-2-3-1の堅さ</strong>と<strong>攻撃時3-2-4-1の5レーン支配</strong>を両立させることができる。2022年W杯でドイツ戦後半に3バック化して逆転した成功体験を、より洗練された形で常態化するプランだ。</p>
-
-    <div class="alert alert-warning">
-        <strong>でも、具体的にどう配置するのか？</strong> 各選手の位置取り、ビルドアップのパスルート、相手のプレスをどう外すのか -- 完全版では、ピッチ図付きで詳細に解説しています。
+    <div class="alert alert-info">
+        <strong>本記事の前提：</strong> この戦術プランは「ただのサッカー好き」がAIに分析させた「妄想」です。プロの戦術家の分析ではありません。しかし、世界の最新戦術トレンドとデータに基づいた「ガチの思考実験」として、サッカーファンの議論のタネになれば幸いです。
     </div>
 </div>
 
 <!-- ============================================ -->
-<!-- なるほど2: 三笘のカットバック -->
+<!-- 世界の戦術トレンド分析 -->
 <!-- ============================================ -->
-<div id="cutback" class="section">
-    <h2 class="section-title">三笘のカットバックがデータ上「最強」である理由</h2>
-    <p class="section-lead">クロスの種類によるゴール期待値（xG効率）を分析すると、日本の最適解が見えてくる。</p>
+<div id="world-trends" class="section" style="background:#fff;">
+    <h2 class="section-title">世界の戦術トレンド分析 2024-2025</h2>
+    <p class="section-lead">日本代表の戦術を設計する前に、まず世界のトップチームが「今、何をやっているのか」を把握する。</p>
 
-    <p>サッカーにおいて「クロスからの得点」というと、多くの人はハイクロスからのヘディングを想像する。しかしデータが示す現実は全く違う。特に<strong>平均身長で欧州・南米に劣る日本</strong>にとって、クロスの種類の選択は勝敗を左右する戦略的判断だ。</p>
+    <h3>マンチェスター・シティ（グアルディオラ）── ポジショナルプレーの極致</h3>
+    <p>グアルディオラのシティは5レーンを均等に占有する「ポジショナルプレー」の教科書だ。各レーンに1人ずつ配置し、ボール保持者に常に最低3つのパスコースを提供する。ジョン・ストーンズの偽CBや、ロドリのアンカーポジションなど、「本来のポジションとは異なる場所でプレーする」ことで相手の守備基準を狂わせる。</p>
+    <p><strong>日本への示唆：</strong> ポジショナルプレーの「空間占有」の概念は日本代表にも適用可能。特に5レーン理論は可変システムとの相性が良い。</p>
 
+    <h3>アーセナル（アルテタ）── 偽SBの革命</h3>
+    <p>アルテタはグアルディオラの弟子として偽SBを最も効果的に進化させた。ジンチェンコやティンバーがSBの位置から中盤に入ることで、守備時は4バック、攻撃時は実質3バックに可変する。この可変は守備の安定性を保ちながら攻撃の厚みを増すという、相反する要求を同時に満たす。</p>
+    <p><strong>日本への示唆：</strong> 冨安健洋がアーセナルでまさにこの役割を担っている。クラブでの経験を代表にそのまま転用できるため、適応コストが極めて低い。これが日本代表戦術の中核となる。</p>
+
+    <h3>レバークーゼン（シャビ・アロンソ）── 無敗優勝の設計図</h3>
+    <p>2023-24シーズンに無敗優勝を達成したレバークーゼンは、「守備時の強度」と「攻撃時の流動性」の両立を高いレベルで実現した。特筆すべきは後半のゲームマネジメント。後半アディショナルタイムでの逆転劇を何度も演じたのは偶然ではなく、90分間を通じたフィジカルとメンタルの管理戦略の結果だ。</p>
+    <p><strong>日本への示唆：</strong> 日本が2022年W杯で見せた「後半からのギアチェンジ」と通底するフィロソフィー。計画的な後半勝負は日本の武器になり得る。</p>
+
+    <h3>レアル・マドリード（アンチェロッティ）── 柔軟性の極致</h3>
+    <p>アンチェロッティのレアルは固定的な戦術フレームワークよりも、試合中の柔軟な対応を重視する。ヴィニシウスの爆発的なカウンター、ベリンガムの飛び出し、クロースの配球と、個の能力を最大化するためのシステム調整を90分間絶えず行う。</p>
+    <p><strong>日本への示唆：</strong> 個の能力では劣る日本がそのまま模倣することは困難だが、「試合中の柔軟な対応」という哲学は大いに参考になる。</p>
+
+    <h3>ブライトン（デ・ゼルビ → ヒュルゼレ）── リレーショナルプレー</h3>
+    <p>デ・ゼルビが築いた「リレーショナルプレー」は、ポジショナルプレーの進化形だ。固定的な5レーン占有ではなく、選手間の「関係性」（距離感、角度、タイミング）を基準にポジションを取る。結果として、守備側からすると予測が極めて難しい攻撃が生まれる。</p>
+    <p><strong>日本への示唆：</strong> 日本人の協調性、連携意識の高さとリレーショナルプレーの親和性は極めて高い。個の能力で劣る部分をチームとしての有機的な動きで補える可能性がある。</p>
+
+    <h3>ブレントフォード（トーマス・フランク）── セットプレー革命</h3>
+    <p>ブレントフォードは専任のセットプレーコーチを配置し、データ分析に基づくセットプレー設計で得点力を劇的に向上させた。これはリバプールやチェルシーにも波及し、現代サッカーの一大トレンドとなっている。W杯ではゴールの約30-35%がセットプレーから生まれており、トーナメント戦の接戦では決定的な差になる。</p>
+    <p><strong>日本への示唆：</strong> 体格差のある日本が空中戦のセットプレーで苦戦するのは事実だが、「動きの質」と「データに基づくデザイン」で補うことは十分可能。ニアゾーンへのフリック、ショートコーナーからのコンビネーション、トリックプレーなど、インテリジェンスで勝負するセットプレーを設計できる。</p>
+</div>
+
+<!-- ============================================ -->
+<!-- 最新フットボール理論 -->
+<!-- ============================================ -->
+<div id="football-theory" class="section">
+    <h2 class="section-title">最新フットボール理論</h2>
+    <p class="section-lead">現代サッカーを支えるデータ指標と戦術理論を理解する。</p>
+
+    <h3>xG（ゴール期待値）── シュートの質を数値化する</h3>
+    <p>xG（Expected Goals）は、あるシュートが得点になる確率を過去の膨大なデータから算出した指標だ。ペナルティスポットからのシュートは約0.76xG、30mの角度のないシュートは0.02xG程度。チームのxG合計がそのチームの「本当の攻撃力」を示す。</p>
+    <p>日本代表の設計においては、<strong>1試合あたり1.5xG以上を安定して創出すること</strong>を目標とする。これは世界のトップ16レベルの数値であり、グループステージ突破とベスト8進出に必要な攻撃力だ。</p>
+
+    <h3>xT（期待脅威値）── ボール前進の価値を測る</h3>
+    <p>xT（Expected Threat）は、ピッチを12x8のグリッドに分割し、各ゾーンからのアクション（パス、ドリブル）がどれだけ得点につながりやすいかを数値化する。ハーフスペース（レーン2・4）のxTが高いことが知られており、このゾーンを支配するチームは攻撃効率が高い。</p>
+    <p><strong>日本の戦術設計への適用：</strong> ハーフスペースへのボール運搬を重視し、サイドからの単純なクロスよりも、ハーフスペース経由のカットバックを優先する攻撃ルートを設計する。</p>
+
+    <h3>プレッシング指標 ── PPDA・プレス成功率</h3>
+    <p>PPDA（Passes Per Defensive Action）は、相手がDFアクション1回あたりに繋いだパスの本数。数値が低いほどプレス強度が高い。リーグ平均は10-12で、トップレベルのプレスチームは8以下を記録する。</p>
+    <p>日本代表のプレス設計では、<strong>ハイプレス時はPPDA 8以下、ミドルプレス時は10-12、ローブロック時は14以上</strong>を目標値として設定する。プレス強度を数値で管理することで、選手が「今どのくらいの強度でプレスすべきか」を客観的に判断できる。</p>
+
+    <h3>ハーフスペース理論 ── 現代サッカーの核心</h3>
+    <p>ピッチを縦に5分割した「5レーン理論」において、レーン2（左ハーフスペース）とレーン4（右ハーフスペース）は、相手のSBとCBの間に位置する「守備の曖昧なゾーン」だ。ここにボールを運ぶことで、相手の守備組織を混乱させることができる。</p>
+    <p>グアルディオラが「試合はハーフスペースで決まる」と語ったとされるように、現代の攻撃戦術の核心はこのゾーンの支配にある。日本代表の可変システムは、まさにハーフスペースを常に味方が占有する状態を作り出すことを目的としている。</p>
+</div>
+
+<!-- ============================================ -->
+<!-- 日本代表スカッド分析 -->
+<!-- ============================================ -->
+<div id="japan-analysis" class="section" style="background:#fff;">
+    <h2 class="section-title">日本代表スカッド分析</h2>
+    <p class="section-lead">強みを最大化し、弱みを戦術で補う。</p>
+
+    <h3>ストレングス（強み）</h3>
+    <div class="card-grid">
+        <div class="card" style="border-left:4px solid #27ae60;">
+            <h4>欧州トップリーグの選手層</h4>
+            <p>冨安（アーセナル）、三笘（ブライトン）、久保（レアル・ソシエダ）、遠藤（リバプール）、守田（スポルティング）など、欧州5大リーグの一線級でプレーする選手が20名以上。これは日本サッカー史上最高の人材プールだ。</p>
+        </div>
+        <div class="card" style="border-left:4px solid #27ae60;">
+            <h4>トランジションの速さ</h4>
+            <p>2022年W杯で証明された、守→攻の切替速度は世界トップレベル。ドイツ戦の堂安・浅野のゴール、スペイン戦の田中碧のゴールは全て高速トランジションから生まれた。この武器を2026年も最大活用する。</p>
+        </div>
+        <div class="card" style="border-left:4px solid #27ae60;">
+            <h4>ドリブラーの質と量</h4>
+            <p>三笘、久保、伊東、堂安。1対1で突破できるウインガーが複数いるのは、世界的に見ても稀有な強み。カットバック中心の攻撃設計が現実的に機能する基盤がある。</p>
+        </div>
+        <div class="card" style="border-left:4px solid #27ae60;">
+            <h4>組織的な守備意識</h4>
+            <p>日本人特有の協調性と規律性は、組織的な守備において大きなアドバンテージ。プレスのトリガーを共有し、全員が同じ判断基準で動ける。これはトレーニング時間が限られる代表チームにおいて極めて重要な資質。</p>
+        </div>
+    </div>
+
+    <h3>ウィークネス（弱み）</h3>
+    <div class="card-grid">
+        <div class="card" style="border-left:4px solid var(--accent);">
+            <h4>空中戦の劣位</h4>
+            <p>平均身長で欧州・南米に劣り、ハイクロスからの得点は期待しにくい。逆に、相手のセットプレーからの空中戦は脅威。<strong>戦術的対策：</strong>攻撃はカットバック優先、守備はゾーンマーク徹底。</p>
+        </div>
+        <div class="card" style="border-left:4px solid var(--accent);">
+            <h4>フィジカルコンタクト</h4>
+            <p>90分間のボディコンタクトの蓄積は、日本の選手にとって消耗が大きい。特にアフリカ勢やフィジカル型の欧州チームとのマッチアップは注意が必要。<strong>戦術的対策：</strong>ポゼッションで試合をコントロールし、不要なコンタクトを減らす。</p>
+        </div>
+        <div class="card" style="border-left:4px solid var(--accent);">
+            <h4>決定力</h4>
+            <p>日本代表の慢性的な課題。チャンスを作る能力は高いが、フィニッシュの精度に課題がある。<strong>戦術的対策：</strong>xGの高いシチュエーション（カットバック、ペナルティエリア内でのシュート）を意図的に作り出す攻撃設計で補う。</p>
+        </div>
+        <div class="card" style="border-left:4px solid var(--accent);">
+            <h4>W杯トーナメント経験</h4>
+            <p>ベスト16の壁を破れていない。PK戦での敗退が続いており、メンタル面の課題が指摘される。<strong>戦術的対策：</strong>ゲームステート管理の体系化で「勝ち切る」シナリオを事前設計。</p>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- 主戦術システム -->
+<!-- ============================================ -->
+<div id="primary-system" class="section">
+    <h2 class="section-title">主戦術システム：4-2-3-1 → 3-2-4-1 可変</h2>
+    <p class="section-lead">守備の安定性と攻撃の厚みを同時に実現する、日本代表の核心的システム。</p>
+
+    <h3>守備時ベースフォーメーション：4-2-3-1</h3>
+    <p>W杯で最も実績のあるシステムであり、日本代表が最も経験を積んでいる配置。守備の基本構造として、中盤の2枚（遠藤・守田）が中央を封鎖し、4バックが安定したラインを形成する。</p>
+
+    <div class="formation">
+<span class="pos-fw">上田（CF）</span>
+<span class="pos-fw">三笘</span>    <span class="pos-mf">鎌田/南野</span>   <span class="pos-fw">久保/伊東</span>
+<span class="pos-mf">遠藤航</span>   <span class="pos-mf">守田</span>
+<span class="pos-df">中山</span>    <span class="pos-df">板倉</span>  <span class="pos-df">冨安</span>   <span class="pos-df">菅原</span>
+<span class="pos-gk">鈴木彩艶</span>
+    </div>
+
+    <h3>ビルドアップ時の可変：3-2-4-1</h3>
+    <p>ボール保持時、冨安が偽SBとしてCBラインに吸収。右SB菅原が高い位置に上がり、左WG三笘が大外レーンに張ることで、5レーン全てに選手を配置。</p>
+
+    <div class="formation">
+<span class="pos-fw">上田</span>
+<span class="pos-fw">三笘</span>              <span class="pos-fw">久保/伊東</span>
+<span class="pos-mf">鎌田/南野</span>    <span class="pos-df">菅原</span>
+<span class="pos-mf">遠藤航</span>    <span class="pos-mf">守田</span>
+<span class="pos-df">中山</span>    <span class="pos-df">板倉</span>    <span class="pos-df">冨安</span>
+<span class="pos-gk">鈴木彩艶</span>
+    </div>
+
+    <h3>この可変の核心</h3>
+    <div class="card-grid">
+        <div class="card">
+            <h4>3バック化でビルドアップ安定</h4>
+            <p>冨安がCBラインに入ることで後方が3枚。相手のプレスに対して数的優位を確保し、余裕を持ったビルドアップが可能になる。GKを含めれば4対2のプレス外しが容易に成立。</p>
+        </div>
+        <div class="card">
+            <h4>2ボランチの自由度向上</h4>
+            <p>後ろが3枚いるため、遠藤航・守田のどちらかが大胆に前に出られる。攻撃参加のリスクを最小化しつつ、中盤の厚みを増すことができる。</p>
+        </div>
+        <div class="card">
+            <h4>5レーン完全支配</h4>
+            <p>三笘（左大外）、トップ下（左ハーフスペース）、CF（中央）、菅原（右ハーフスペース）、久保/伊東（右大外）で5レーン全てに選手が配置される。相手のDFは全レーンを埋めなければならず、必ずどこかに数的不利が生まれる。</p>
+        </div>
+        <div class="card">
+            <h4>三笘の1vs1状況を構造的に創出</h4>
+            <p>三笘が左大外レーンに張ることで、相手の右SBと1vs1の状況を意図的に作り出す。中盤が中央に密集するため、相手は三笘への加勢が難しい。これにより三笘の突破力が最大化される。</p>
+        </div>
+    </div>
+
+    <h3>冨安が離脱した場合のバックアッププラン</h3>
+    <p>冨安健洋はこのシステムの核であり、彼が離脱した場合のプランBは不可欠だ。</p>
+    <ul style="padding-left:24px;margin:12px 0;">
+        <li><strong>オプション1：</strong>伊藤洋輝を偽SB役に配置。左足の精度があり、CBラインに吸収されてもビルドアップに貢献できる。</li>
+        <li><strong>オプション2：</strong>板倉滉をRCBに移し、谷口をCCBに配置。冨安のCB機能は補えるが、偽SBの機動性は失われるため、可変幅を縮小して4-2-3-1をベースに戦う。</li>
+        <li><strong>オプション3：</strong>最初から3-4-2-1で組み、可変を前提としない配置にする。守田をCB横に降ろし、3バックの構造を最初から作る。</li>
+    </ul>
+</div>
+
+<!-- ============================================ -->
+<!-- プランB/C -->
+<!-- ============================================ -->
+<div id="secondary-system" class="section" style="background:#fff;">
+    <h2 class="section-title">プランB/C：状況対応型の副次システム</h2>
+    <p class="section-lead">W杯は1つのプランでは勝ち抜けない。状況に応じた切替戦略が不可欠。</p>
+
+    <h3>プランB：4-3-3（ハイプレス型）</h3>
+    <p>リードされている場面、または格下相手に主導権を握りたい場面で使用。</p>
+
+    <div class="formation">
+<span class="pos-fw">三笘</span>    <span class="pos-fw">上田</span>    <span class="pos-fw">久保/伊東</span>
+<span class="pos-mf">鎌田</span>   <span class="pos-mf">遠藤航</span>   <span class="pos-mf">守田</span>
+<span class="pos-df">中山</span>    <span class="pos-df">板倉</span>   <span class="pos-df">冨安</span>   <span class="pos-df">菅原</span>
+<span class="pos-gk">鈴木彩艶</span>
+    </div>
+
+    <ul style="padding-left:24px;margin:12px 0;">
+        <li>プレスラインを相手ゴールから30m以内に設定</li>
+        <li>PPDAを<strong>8以下</strong>に抑える（リーグ平均は10-12）</li>
+        <li>ウインガーが相手SBへのパスコースを切りながらプレス、ボランチがセカンドボール回収</li>
+        <li>ショートカウンターからの速攻を狙う</li>
+        <li>目標：相手陣地内で<strong>5秒以内にボール奪取</strong>またはロングボールを蹴らせる</li>
+    </ul>
+
+    <h3>プランC：5-4-1（リトリート型）</h3>
+    <p>リードを守りたい場面、または圧倒的に格上の相手に対して使用。</p>
+
+    <div class="formation">
+<span class="pos-fw">上田</span>
+<span class="pos-fw">三笘</span>    <span class="pos-mf">鎌田</span>    <span class="pos-mf">守田</span>    <span class="pos-fw">久保/伊東</span>
+<span class="pos-df">中山</span>   <span class="pos-df">板倉</span>  <span class="pos-df">冨安</span>  <span class="pos-df">菅原</span>
+<span class="pos-mf">遠藤航（アンカー）</span>
+<span class="pos-gk">鈴木彩艶</span>
+    </div>
+
+    <ul style="padding-left:24px;margin:12px 0;">
+        <li>ブロックを敷いて中央を完全封鎖</li>
+        <li>ボール奪取後はロングカウンター（三笘の1vs1能力を活用）</li>
+        <li>セットプレーでの得点を狙う</li>
+        <li>遠藤航がCBラインの前でアンカーとして構え、5-3-1-1的な構造にもなる</li>
+    </ul>
+
+    <h3>プラン切替のトリガー</h3>
     <table>
         <thead>
-            <tr>
-                <th>クロスの種類</th>
-                <th>xG効率</th>
-                <th>日本の優先度</th>
-                <th>理由</th>
-            </tr>
+            <tr><th>状況</th><th>採用プラン</th><th>切替タイミング</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>0-0で拮抗</td><td>プランA（基本）</td><td>キックオフから</td></tr>
+            <tr><td>先制した</td><td>プランA → 60分以降プランC</td><td>スコア変動時</td></tr>
+            <tr><td>ビハインド</td><td>プランB（ハイプレス）</td><td>失点直後 or 60分以降</td></tr>
+            <tr><td>2点差リード</td><td>プランC（リトリート）</td><td>スコア変動時</td></tr>
+            <tr><td>延長戦</td><td>プランA（省エネver.）</td><td>延長開始時</td></tr>
+            <tr><td>PK戦</td><td>--</td><td>専用の準備プラン</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ============================================ -->
+<!-- 攻撃原則 -->
+<!-- ============================================ -->
+<div id="attack" class="section">
+    <h2 class="section-title">攻撃原則</h2>
+    <p class="section-lead">5つの原則で日本の攻撃を体系化する。</p>
+
+    <h3>原則1：ハーフスペースの支配</h3>
+    <p>ペナルティエリア外の両サイドのハーフスペース（レーン2・4）に常に選手を配置する。この空間は相手のSBとCBの間に位置し、守備側が最もマークしにくいエリア。日本の可変システムでは、トップ下（鎌田）と上がったSB（菅原）がこのゾーンを支配する。</p>
+
+    <h3>原則2：カットバック優先のファイナルサード攻略</h3>
+    <p>前述のxGデータに基づき、バイタルエリアに侵入したウインガーは「クロス」ではなく「カットバック」を第一選択とする。ペナルティエリア内には最低3人（CF＋逆サイドWG＋MF）がカットバック受け手として侵入。</p>
+    <table>
+        <thead>
+            <tr><th>クロスの種類</th><th>xG効率</th><th>日本の優先度</th><th>理由</th></tr>
         </thead>
         <tbody>
             <tr>
                 <td>カットバック（グラウンダー）</td>
-                <td style="color:#27ae60;font-weight:700;">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+                <td style="color:#27ae60;font-weight:700;">0.15-0.25</td>
                 <td><span class="tag tag-green">最優先</span></td>
-                <td>空中戦不要。三笘のカットバックは世界最高級</td>
+                <td>空中戦不要。三笘の最大の武器</td>
             </tr>
             <tr>
                 <td>低いクロス（ゴロ/ハーフバウンド）</td>
-                <td style="color:#27ae60;font-weight:700;">&#9733;&#9733;&#9733;&#9733;</td>
+                <td style="color:#27ae60;font-weight:700;">0.08-0.12</td>
                 <td><span class="tag tag-green">優先</span></td>
-                <td>身長差の影響を最小化。技術で決められる</td>
+                <td>身長差の影響を最小化</td>
             </tr>
             <tr>
                 <td>アーリークロス</td>
-                <td style="font-weight:700;">&#9733;&#9733;&#9733;</td>
+                <td>0.05-0.08</td>
                 <td><span class="tag tag-gold">状況次第</span></td>
                 <td>DFラインの裏へのアーリーは有効</td>
             </tr>
             <tr>
                 <td>ハイクロス</td>
-                <td style="color:var(--accent);font-weight:700;">&#9733;&#9733;</td>
+                <td style="color:var(--accent);">0.03-0.05</td>
                 <td><span class="tag tag-red">非推奨</span></td>
-                <td>空中戦で不利。最終手段としてのみ</td>
+                <td>空中戦で不利。最終手段</td>
             </tr>
         </tbody>
     </table>
 
-    <p>三笘薫のドリブル突破力はプレミアリーグでも屈指。1対1の突破からバイタルエリアに侵入し、DFラインの裏に走り込む味方へグラウンダーのカットバックを送る。このパターンは<strong>空中戦の身長差を完全に無効化</strong>しつつ、最もxG効率の高い攻撃を実現する。</p>
+    <h3>原則3：リレーショナルプレーの導入</h3>
+    <p>固定的なポジショニングではなく、味方との「関係性」で動く。グアルディオラのポジショナルプレー（空間基準）とデ・ゼルビのリレーショナルプレー（関係性基準）のハイブリッド。日本人の協調性・連携意識の高さとの親和性が極めて高く、個の能力で劣る部分をチームとしての有機的な動きで補える。</p>
 
-    <p>AIの分析によると、左サイドで三笘が1対1の局面を<strong>意図的に作り出す</strong>ことが、日本代表の攻撃効率を最大化する鍵になる。逆サイドへの展開から三笘を孤立させ、ドリブル突破からカットバック/クロス -- このパターンだけで、日本の得点期待値は劇的に向上する。</p>
+    <h3>原則4：レイオフからの3人目の動き</h3>
+    <p>CFへのくさびのパス → CFがレイオフ → 3人目の選手がダイレクトでシュートまたはスルーパス。この「3人目の動き」を攻撃の核とする。上田綺世のポストプレー能力を活かし、鎌田や守田が3人目として飛び出すパターンを基本形とする。</p>
 
-    <div class="alert alert-warning">
-        <strong>しかし、カットバック1本で勝てるほどW杯は甘くない。</strong> 三笘が封じられたら？ 相手がローブロックで引いてきたら？ プランA/B/Cの切替戦略と、攻撃プラン全体の設計図は完全版で。
+    <h3>原則5：逆サイドへの展開からのアイソレーション</h3>
+    <p>ボールをサイドに振り、逆サイドのウインガー（特に三笘）を1vs1の状況で孤立させる。中央に人を集めてから一気にサイドチェンジし、ウインガーの個人技で突破する。このパターンだけで日本の得点期待値は劇的に向上する。</p>
+</div>
+
+<!-- ============================================ -->
+<!-- 守備原則 -->
+<!-- ============================================ -->
+<div id="defense" class="section" style="background:#fff;">
+    <h2 class="section-title">守備原則</h2>
+    <p class="section-lead">3つのプレスラインと状況に応じた守備強度の調整。</p>
+
+    <h3>ハイプレス（敵陣30m以内）</h3>
+    <ul style="padding-left:24px;margin:12px 0;">
+        <li><strong>トリガー：</strong>GKからCBへのバックパス、相手が後ろ向きでボールを受けた時</li>
+        <li>CFが片方のCBへパスコースを限定 → ウインガーがSBを切りながらプレス</li>
+        <li>2ボランチのうち1枚が前に出てプレスに参加（もう1枚はカバーシャドー）</li>
+        <li><strong>目標：</strong>相手陣地内で5秒以内にボール奪取 or ロングボールを蹴らせる</li>
+        <li><strong>PPDA目標：</strong>8以下</li>
+    </ul>
+
+    <h3>ミドルプレス（ハーフウェイライン付近）</h3>
+    <ul style="padding-left:24px;margin:12px 0;">
+        <li>ブロックの最前線をハーフウェイライン付近に設定</li>
+        <li>4-4-2の守備ブロックを形成（2列目の選手がCFラインまで上がる）</li>
+        <li>相手のビルドアップを中盤で引っ掛ける「罠」を仕掛ける</li>
+        <li>トランジション時にウインガーの速さを活かしたカウンターに直結</li>
+        <li><strong>PPDA目標：</strong>10-12</li>
+    </ul>
+
+    <h3>ローブロック（自陣ペナルティエリア手前30m）</h3>
+    <ul style="padding-left:24px;margin:12px 0;">
+        <li>4-5-1の守備ブロックで中央を完全封鎖</li>
+        <li>サイドに誘導して、クロスに対しては数的優位で跳ね返す</li>
+        <li>ボール奪取後のファーストパスは前方（ロングカウンター起動）</li>
+        <li>三笘の1vs1能力を活用した高速カウンターに繋げる</li>
+        <li><strong>PPDA目標：</strong>14以上（低い強度）</li>
+    </ul>
+
+    <h3>守備のゾーンマーク原則</h3>
+    <p>セットプレーの守備は基本的にゾーンマークを採用する。空中戦で劣る日本が個人マークで対応すると、フィジカルの差で競り負けるリスクが高い。ゾーンで守り、危険なゾーンを数的優位で固める方が合理的だ。ただし、相手のキーマン（エムバペ、ホーランド級の選手）には個人マークを併用するハイブリッド方式を採用する。</p>
+</div>
+
+<!-- ============================================ -->
+<!-- トランジション -->
+<!-- ============================================ -->
+<div id="transition" class="section">
+    <h2 class="section-title">トランジション原則</h2>
+    <p class="section-lead">日本代表の最大の武器。守→攻の切替速度を世界最速レベルに引き上げる。</p>
+
+    <h3>ポジティブトランジション（ボール奪取した瞬間）</h3>
+    <div class="card-grid">
+        <div class="card" style="border-left:4px solid #27ae60;">
+            <h4>5秒ルール</h4>
+            <p>ボール奪取から5秒以内にシュートに至るか、ポゼッションを安定させる。この5秒間が最もチャンスが生まれる「ゴールデンタイム」だ。2022年W杯ドイツ戦の堂安・浅野のゴールがまさにこのパターン。</p>
+        </div>
+        <div class="card" style="border-left:4px solid #27ae60;">
+            <h4>ファーストパスは前方</h4>
+            <p>ボール奪取直後のファーストパスは原則として前方。特にウインガーへのロングパスが有効。三笘や伊東の裏抜けスピードを活かし、相手のDFが帰陣する前にフィニッシュまで持ち込む。</p>
+        </div>
+        <div class="card" style="border-left:4px solid #27ae60;">
+            <h4>3人が同時にスプリント</h4>
+            <p>ボール奪取の瞬間、最低3人が前方にスプリントを開始する。CF＋両ウインガーが一斉に走ることで、カウンターの選択肢を複数確保。相手DFが1つを潰しても、別の選択肢が残る。</p>
+        </div>
+    </div>
+
+    <h3>ネガティブトランジション（ボールを失った瞬間）</h3>
+    <div class="card-grid">
+        <div class="card" style="border-left:4px solid var(--accent);">
+            <h4>ゲーゲンプレス（即時奪回）</h4>
+            <p>ボールを失った地点で3人以上が即座にプレスに参加。3秒以内に奪回を試みる。ゲーゲンプレスはクロップが確立した概念だが、日本の集団的な守備意識との親和性は高い。</p>
+        </div>
+        <div class="card" style="border-left:4px solid var(--accent);">
+            <h4>奪回失敗時のリトリート</h4>
+            <p>3秒以内に奪回できなければ即座にリトリートし、守備ブロックを再構築。中途半端なプレスは最も危険。「奪えなければ即引く」を全員が徹底する。</p>
+        </div>
     </div>
 </div>
 
 <!-- ============================================ -->
-<!-- 続きが気になりませんか？セクション -->
+<!-- セットプレー -->
 <!-- ============================================ -->
-<div id="full-version" class="cta-section">
-    <h2 style="font-size:32px;font-weight:800;margin-bottom:10px;position:relative;z-index:1;">続きが気になりませんか？</h2>
-    <p style="color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:10px;position:relative;z-index:1;">ここまではほんの序章です。</p>
-    <p style="color:rgba(255,255,255,0.5);font-size:14px;margin-bottom:40px;position:relative;z-index:1;">完全版では以下の内容を<strong style="color:#fff;">15,000字超</strong>で徹底解説しています：</p>
+<div id="setpiece" class="section" style="background:#fff;">
+    <h2 class="section-title">セットプレー戦略</h2>
+    <p class="section-lead">W杯得点の約30-35%を占めるセットプレーを、データ駆動で革命する。</p>
 
-    <div class="toc-teaser">
-        <div class="toc-teaser-item">
-            <span class="toc-num">1</span>
-            <span class="toc-text"><strong>主戦術システムの詳細設計</strong><br>ピッチ図付きの配置・パスルート・プレス回避ルート</span>
+    <h3>攻撃セットプレー</h3>
+    <p>体格差のある日本がセットプレーで勝つには、「高さ」ではなく「動きの質」と「データに基づくデザイン」で勝負する。</p>
+    <div class="card-grid">
+        <div class="card">
+            <h4>ニアゾーンへのフリック</h4>
+            <p>ニアポストに走り込む選手がフリック（ヘディングでコースを変える）し、ファーポストの選手に合わせる。身長が低くてもフリックは可能で、タイミングの勝負になる。</p>
         </div>
-        <div class="toc-teaser-item">
-            <span class="toc-num">2</span>
-            <span class="toc-text"><strong>プランA/B/Cの切替戦略</strong><br>4-2-3-1, 3-4-2-1, 4-3-3を状況で使い分ける</span>
+        <div class="card">
+            <h4>ショートコーナー</h4>
+            <p>コーナーキックで直接ゴールを狙うのではなく、ショートコーナーからコンビネーションで崩す。相手のゾーンマークを動かし、スペースを作り出す。</p>
         </div>
-        <div class="toc-teaser-item">
-            <span class="toc-num">3</span>
-            <span class="toc-text"><strong>攻撃・守備・トランジション原則</strong><br>5つのフィロソフィーと具体的なKPI設定</span>
+        <div class="card">
+            <h4>FK時のブロック&リリース</h4>
+            <p>フリーキック時に選手がブロックを組み、ターゲットマンのマーカーを引き剥がしてからリリースする。バスケットボールのスクリーンプレーと同様の原理。</p>
         </div>
-        <div class="toc-teaser-item">
-            <span class="toc-num">4</span>
-            <span class="toc-text"><strong>対戦相手別の戦術プラン</strong><br>vsオランダ, vsチュニジア, vs欧州PO勝者の詳細分析</span>
-        </div>
-        <div class="toc-teaser-item">
-            <span class="toc-num">5</span>
-            <span class="toc-text"><strong>スカッド構成26名</strong><br>ポジション別の最適選手とバックアップ戦略</span>
-        </div>
-        <div class="toc-teaser-item">
-            <span class="toc-num">6</span>
-            <span class="toc-text"><strong>ゲームステート管理マトリクス</strong><br>リード時/同点時/ビハインド時の戦術切替</span>
-        </div>
-        <div class="toc-teaser-item">
-            <span class="toc-num">7</span>
-            <span class="toc-text"><strong>セットプレー革命</strong><br>W杯得点の30%を占めるセットプレーの科学的設計</span>
-        </div>
-        <div class="toc-teaser-item">
-            <span class="toc-num">8</span>
-            <span class="toc-text"><strong>フィジカル・大会マネジメント</strong><br>7試合を戦い抜くための負荷管理と選手ローテーション</span>
+        <div class="card">
+            <h4>トリックプレー</h4>
+            <p>大会中、最低2-3種類のトリックプレーを準備する。予測不能なセットプレーは、相手がスカウティングで対策しにくく、トーナメント戦で特に効果を発揮する。</p>
         </div>
     </div>
 
-    <div style="margin-top:50px;position:relative;z-index:1;">
-        <a href="https://note.com/pokano_ai" target="_blank" class="cta-btn">完全版をnoteで読む &rarr;</a>
-        <p style="color:rgba(255,255,255,0.4);font-size:12px;margin-top:16px;">noteアカウントがなくても読めます</p>
+    <h3>守備セットプレー</h3>
+    <p>ゾーンマークを基本とし、ペナルティエリア内の6つのゾーンに1人ずつ配置。ニアポスト前とファーポスト前に長身のDF（板倉、伊藤洋輝）を配置し、最も危険なゾーンを物理的にカバーする。GKは基本的にラインを越えてパンチング。ゾーンを離れて飛び出すことは最小限に抑える。</p>
+</div>
+
+<!-- ============================================ -->
+<!-- 対戦相手別戦術 -->
+<!-- ============================================ -->
+<div id="opponent-tactics" class="section">
+    <h2 class="section-title">対戦相手タイプ別戦術</h2>
+    <p class="section-lead">相手のスタイルに応じて、プランA/B/Cを使い分ける。</p>
+
+    <h3>対欧州強豪（ドイツ、スペイン、フランス、オランダなど）</h3>
+    <h4>基本方針：ミドルプレス＋カウンター → 後半に出力を上げる</h4>
+    <p>2022年W杯で実証済みの「前半は守備的に入り、後半に勝負をかける」アプローチを進化させる。</p>
+    <ul style="padding-left:24px;margin:12px 0;">
+        <li><strong>前半：</strong>ミドルプレスで中盤を圧縮。ポゼッションは相手に渡してもOK（60-70%許容）</li>
+        <li>ボール奪取時はカットバック中心のカウンター</li>
+        <li><strong>後半60-70分：</strong>フレッシュなウインガーを投入し、プレス強度を一気に上げる</li>
+        <li>相手の疲労と日本のフレッシュな足の「落差」で仕留める</li>
+    </ul>
+    <div class="alert alert-info">
+        <strong>キーポイント：</strong> 欧州強豪はビルドアップの質が高いので、無理にハイプレスをかけない。中盤で引っ掛ける「罠」を仕掛ける。
+    </div>
+
+    <h3>対南米（ブラジル、アルゼンチンなど）</h3>
+    <h4>基本方針：スペースを消す＋セットプレーで勝負</h4>
+    <ul style="padding-left:24px;margin:12px 0;">
+        <li>南米チームは狭いスペースでの個人技に長けるため、ブロックを敷いてスペースを消す</li>
+        <li>ファウルを恐れず、ペナルティエリア外では積極的にボディコンタクト</li>
+        <li>セットプレーのデザインを徹底し、限られたチャンスを確実にものにする</li>
+        <li>カウンター時は三笘の1vs1能力を最大活用（南米のSBは攻撃参加で留守になりがち）</li>
+    </ul>
+
+    <h3>対アフリカ（セネガル、ナイジェリアなど）</h3>
+    <h4>基本方針：ポゼッションで主導権＋テンポコントロール</h4>
+    <ul style="padding-left:24px;margin:12px 0;">
+        <li>アフリカ勢はフィジカルとスピードに優れるが、組織的な守備に隙が出ることがある</li>
+        <li>ポゼッションを握り、試合のテンポをコントロール</li>
+        <li>相手を走らせて後半に体力を奪う</li>
+        <li>ロングボールの空中戦は避け、グラウンダーのパス交換で崩す</li>
+    </ul>
+
+    <h3>対アジア・格下チーム</h3>
+    <h4>基本方針：プランBのハイプレスで圧倒</h4>
+    <ul style="padding-left:24px;margin:12px 0;">
+        <li>格下相手にはプランBの4-3-3ハイプレスを初手から展開</li>
+        <li>前半のうちに2点以上を取り、後半は選手を休ませる（大会全体を見据えた体力管理）</li>
+        <li>主力の出場時間をコントロールし、決勝トーナメントに備える</li>
+    </ul>
+</div>
+
+<!-- ============================================ -->
+<!-- ゲームステート管理 -->
+<!-- ============================================ -->
+<div id="gamestate" class="section" style="background:#fff;">
+    <h2 class="section-title">ゲームステート管理マトリクス</h2>
+    <p class="section-lead">2022年W杯での「感覚的な」成功を、2026年では「体系化されたシステム」に昇華する。</p>
+
+    <table>
+        <thead>
+            <tr><th>ゲームステート</th><th>ライン高さ</th><th>プレス強度</th><th>ポゼッション目標</th><th>交代戦略</th><th>メンタル</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>0-0（前半）</td><td>中</td><td>中</td><td>45-50%</td><td>温存</td><td>忍耐</td></tr>
+            <tr><td>0-0（後半60分〜）</td><td>高</td><td>高</td><td>50-55%</td><td>攻撃的交代</td><td>積極</td></tr>
+            <tr><td>1-0リード</td><td>中→低</td><td>中→低</td><td>40-45%</td><td>バランス型</td><td>冷静</td></tr>
+            <tr><td>0-1ビハインド</td><td>高</td><td>高</td><td>55-60%</td><td>攻撃的交代</td><td>勇気</td></tr>
+            <tr><td>2-0リード</td><td>低</td><td>低</td><td>35-40%</td><td>守備的交代</td><td>管理</td></tr>
+            <tr><td>0-2ビハインド</td><td>超高</td><td>超高</td><td>60%+</td><td>全攻撃的</td><td>覚悟</td></tr>
+            <tr><td>延長前半</td><td>中</td><td>中</td><td>45%</td><td>慎重</td><td>集中</td></tr>
+            <tr><td>延長後半</td><td>状況次第</td><td>状況次第</td><td>--</td><td>残り枠全投入</td><td>全力</td></tr>
+        </tbody>
+    </table>
+
+    <h3>ゲームステート変更時の約束事</h3>
+    <ul style="padding-left:24px;margin:12px 0;">
+        <li><strong>リセットタイム：</strong>スコアが動いた直後の5分間は、必ず「リセットタイム」を設ける。失点後に慌てて前がかりにならない。</li>
+        <li><strong>伝達経路：</strong>監督からのシステム変更指示は、キャプテン遠藤航を経由して全体に伝達。</li>
+        <li><strong>事前暗記：</strong>各選手は自分のポジションごとに「ゲームステート別の役割表」を事前に暗記。</li>
+        <li><strong>交代枠の使い切り：</strong>70分以降は「交代枠を全て使い切る」ことを前提に準備。</li>
+    </ul>
+</div>
+
+<!-- ============================================ -->
+<!-- スカッド構成26名 -->
+<!-- ============================================ -->
+<div id="squad" class="section">
+    <h2 class="section-title">スカッド構成 26名</h2>
+    <p class="section-lead">選手特性・戦術適合性・コンディション管理を分析して設計した26名。</p>
+
+    <h3>GK（3名）</h3>
+    <table>
+        <thead><tr><th>選手</th><th>役割</th></tr></thead>
+        <tbody>
+            <tr><td>鈴木彩艶</td><td>正GK。足元の技術＋フィードの質。ビルドアップ参加型</td></tr>
+            <tr><td>中村航輔</td><td>第2GK。セービング能力。緊急時の選択肢</td></tr>
+            <tr><td>前川黛也</td><td>第3GK。練習パートナー＋チーム内競争</td></tr>
+        </tbody>
+    </table>
+
+    <h3>DF（9名）</h3>
+    <table>
+        <thead><tr><th>選手</th><th>役割</th></tr></thead>
+        <tbody>
+            <tr><td>冨安健洋</td><td>RCB/偽SB。戦術の核。プランAの起点</td></tr>
+            <tr><td>板倉滉</td><td>CCB。空中戦の強さ。ラインコントロール</td></tr>
+            <tr><td>中山雄太</td><td>LCB/LSB。左足のビルドアップ。ユーティリティ</td></tr>
+            <tr><td>町田浩樹</td><td>CB。板倉の控え。高さ＋左足</td></tr>
+            <tr><td>谷口彰悟</td><td>CB。経験値。ベテランの安定感</td></tr>
+            <tr><td>菅原由勢</td><td>RSB/RWB。攻撃参加＋クロスの質</td></tr>
+            <tr><td>毎熊晟矢</td><td>RSB。菅原の控え。守備的なオプション</td></tr>
+            <tr><td>伊藤洋輝</td><td>LCB/LSB。左足の精度。冨安バックアップ候補</td></tr>
+            <tr><td>長友佑都</td><td>LSB。大会経験。ロッカールームリーダー</td></tr>
+        </tbody>
+    </table>
+
+    <h3>MF（7名）</h3>
+    <table>
+        <thead><tr><th>選手</th><th>役割</th></tr></thead>
+        <tbody>
+            <tr><td>遠藤航</td><td>アンカー/DM。キャプテン。デュエル王</td></tr>
+            <tr><td>守田英正</td><td>CM。ボール奪取＋前進のパス。遠藤との補完性</td></tr>
+            <tr><td>田中碧</td><td>CM。守田の控え＋ローテーション。W杯ゴールの経験</td></tr>
+            <tr><td>鎌田大地</td><td>AM/CM。創造性＋ゴール前の嗅覚。トップ下の第一選択</td></tr>
+            <tr><td>南野拓実</td><td>AM/WG。トップ下の控え＋左WGのオプション</td></tr>
+            <tr><td>旗手怜央</td><td>CM/WG。ユーティリティ。複数ポジション対応</td></tr>
+            <tr><td>久保建英</td><td>RW/AM。右サイドからのカットイン＋チャンスメイク</td></tr>
+        </tbody>
+    </table>
+
+    <h3>FW（7名）</h3>
+    <table>
+        <thead><tr><th>選手</th><th>役割</th></tr></thead>
+        <tbody>
+            <tr><td>上田綺世</td><td>CF。ポストプレー＋フィニッシュ。戦術の中心</td></tr>
+            <tr><td>浅野拓磨</td><td>CF/RW。スピード。後半のジョーカー</td></tr>
+            <tr><td>古橋亨梧</td><td>CF。上田の控え。裏抜けの質</td></tr>
+            <tr><td>三笘薫</td><td>LW。1vs1最強。カットバック供給源。攻撃の主軸</td></tr>
+            <tr><td>伊東純也</td><td>RW。スピード＋クロス。右サイドの主力</td></tr>
+            <tr><td>前田大然</td><td>LW/CF。プレスの申し子。後半のプレス要員</td></tr>
+            <tr><td>堂安律</td><td>RW/AM。シュート力。セットプレーのキッカー</td></tr>
+        </tbody>
+    </table>
+
+    <h3>スカッド設計思想</h3>
+    <ul style="padding-left:24px;margin:12px 0;">
+        <li><strong>ユーティリティ重視：</strong>複数ポジションをこなせる選手を多く選出し、26名で最大のオプションを確保</li>
+        <li><strong>プランA/B/C全対応：</strong>どの戦術プランでも質を落とさず11人を組める構成</li>
+        <li><strong>大会マネジメント：</strong>最大7試合を戦い抜く体力配分を考慮</li>
+        <li><strong>メンタルバランス：</strong>W杯経験者とフレッシュな若手の混成</li>
+    </ul>
+</div>
+
+<!-- ============================================ -->
+<!-- フィジカル管理 -->
+<!-- ============================================ -->
+<div id="physical" class="section" style="background:#fff;">
+    <h2 class="section-title">フィジカル管理</h2>
+    <p class="section-lead">7試合を最高のコンディションで戦い抜くための負荷管理。</p>
+
+    <h3>出場時間管理の基本原則</h3>
+    <p>W杯は最大7試合（GS3試合＋決勝T4試合）を約1ヶ月で戦う。選手のパフォーマンスは90分を超えると急激に低下し、試合間の回復にも最低72時間が必要とされる。</p>
+
+    <div class="card-grid">
+        <div class="card">
+            <h4>スプリント回数の管理</h4>
+            <p>1試合あたりのハイスプリント（時速25km以上）回数を40-50回以内に管理。これを超えると筋損傷リスクが急上昇する。特にウインガー（三笘、伊東）のスプリント負荷を監視し、交代タイミングを逆算する。</p>
+        </div>
+        <div class="card">
+            <h4>ローテーション戦略</h4>
+            <p>GS第3戦は、既に突破を決めている場合は主力を最大5名入れ替え。DF・ボランチの核（冨安、遠藤、守田）は可能な限り温存し、決勝Tに万全の状態で臨む。</p>
+        </div>
+        <div class="card">
+            <h4>交代枠の戦略的活用</h4>
+            <p>5人交代制（3回のタイミング＋ハーフタイム）を最大限に活用。60分・70分・80分の3段階で計5名を入れ替え、後半のフレッシュさを武器にする。これは2022年W杯で日本が成功した「後半勝負」の体系化だ。</p>
+        </div>
+        <div class="card">
+            <h4>暑熱対策</h4>
+            <p>2026年大会は北米の夏に開催。特に南部の会場（メキシコ、テキサス等）は高温多湿が予想される。プレクーリング、氷水浴、ハーフタイムのクーリングベスト着用など、暑熱対策のプロトコルを事前に確立する。</p>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- 大会マネジメント -->
+<!-- ============================================ -->
+<div id="tournament" class="section">
+    <h2 class="section-title">大会マネジメント</h2>
+    <p class="section-lead">W杯は「7回の90分」ではなく「1ヶ月の1つの戦い」。</p>
+
+    <h3>グループステージの戦略</h3>
+    <p>グループFでオランダ、チュニジア、欧州プレーオフB勝者と対戦。最優先目標はグループ突破であり、3試合のトータルで最適なリソース配分を設計する。</p>
+    <table>
+        <thead><tr><th>試合</th><th>対戦相手</th><th>戦略</th><th>起用方針</th></tr></thead>
+        <tbody>
+            <tr><td>第1戦</td><td>チュニジア or 欧州PO勝者</td><td>プランB（ハイプレス）で主導権。早期に先制し、後半は温存</td><td>主力起用。ただし80分以降は計画的に交代</td></tr>
+            <tr><td>第2戦</td><td>オランダ</td><td>プランA（基本）。ミドルプレス＋カウンター。前半は耐えて後半勝負</td><td>フルメンバー。交代は60分以降に集中</td></tr>
+            <tr><td>第3戦</td><td>残りの1チーム</td><td>突破済みなら大幅ローテーション。未定なら全力</td><td>状況に応じて最大5名入替</td></tr>
+        </tbody>
+    </table>
+
+    <h3>決勝トーナメントの原則</h3>
+    <ul style="padding-left:24px;margin:12px 0;">
+        <li><strong>90分で決める：</strong>延長戦は体力的なリスクが大きい。90分以内での決着を最優先とする</li>
+        <li><strong>先制点の重み：</strong>トーナメント戦での先制点は勝率を70%以上に引き上げる。ゲームプランは「先制→管理」を基本とする</li>
+        <li><strong>PK戦の準備：</strong>PK戦は運ではなくスキル。全キッカーの順番と蹴り方を事前に決定。GKには相手キッカーのPK傾向データを提供。メンタルトレーニングも実施</li>
+    </ul>
+
+    <h3>メンタルマネジメント</h3>
+    <p>2022年W杯のクロアチア戦PK負けは、メンタル面の課題を浮き彫りにした。2026年に向けて以下のメンタルプログラムを実施する：</p>
+    <ul style="padding-left:24px;margin:12px 0;">
+        <li>専門のスポーツ心理学者をチームスタッフに帯同</li>
+        <li>「プレッシャー下での意思決定」のトレーニングを定期的に実施</li>
+        <li>「失点後の5分間ルーティン」を全選手で共有（深呼吸→ポジションリセット→次のプレーに集中）</li>
+        <li>ベテラン（長友、谷口）のW杯経験を若手に継承するメンタリングプログラム</li>
+    </ul>
+</div>
+
+<!-- ============================================ -->
+<!-- AIプロンプト公開 -->
+<!-- ============================================ -->
+<div class="section" style="background:#fff;">
+    <h2 class="section-title">AIに分析させた時に使ったプロンプト</h2>
+    <p class="section-lead">自分でカスタマイズして、好きなチームの戦術プランを設計してみてください。</p>
+
+    <div class="card-grid">
+        <div class="card">
+            <h4>プロンプト1（戦術トレンド分析用）</h4>
+            <p style="font-size:12px;background:#f8f9fa;padding:12px;border-radius:6px;">「2023-2024シーズンの欧州サッカーにおける最新戦術トレンドを分析してください。特に以下の観点から：(1) インバーテッド・フルバック（偽SB）の進化、(2) ポジショナルプレーとリレーショナルプレーのハイブリッド、(3) ゲーゲンプレスの現代版、(4) ゲームステート管理の体系化。マンチェスター・シティ、アーセナル、レバークーゼン、レアル・マドリードの事例を含めてください」</p>
+        </div>
+        <div class="card">
+            <h4>プロンプト2（日本代表最適化用）</h4>
+            <p style="font-size:12px;background:#f8f9fa;padding:12px;border-radius:6px;">「日本代表の現有戦力の選手特性を分析し、2026年W杯で最も効果的な戦術システムを設計してください。条件：(1) 2022年W杯の成功要因を発展させること、(2) 対戦相手のタイプ別にプランA/B/Cを設計すること、(3) 試合中のシステム変更を体系化すること、(4) xG、xT、PPDAなどの最新データ指標を活用すること」</p>
+        </div>
+    </div>
+
+    <div class="alert alert-info">
+        <strong>コツ：</strong>AIに「教えてください」ではなく「設計してください」と依頼すること。「教えて」だと知識の羅列になりますが、「設計して」と言うと、具体的なプラン・数値目標・判断基準まで含んだアウトプットが出てきます。
+    </div>
+</div>
+
+<!-- ============================================ -->
+<!-- バイラルループCTA -->
+<!-- ============================================ -->
+<div class="section" style="padding:40px 60px;">
+    <div class="viral-cta">
+        <h3 style="font-size:24px;">&#9917; あなたの最強フォーメーションは？</h3>
+        <p style="font-size:16px;color:rgba(255,255,255,0.9);margin-bottom:16px;">日本代表の最適フォーメーション、あなたはどう思いますか？</p>
+        <p style="font-size:15px;color:rgba(255,255,255,0.8);">Xで <strong style="color:var(--gold);">#pokano日本代表</strong> をつけて投稿してください。</p>
+        <p style="font-size:14px;color:rgba(255,255,255,0.6);">Pokanoが見つけたらリポストします！</p>
+        <div style="margin-top:24px;">
+            <a href="https://twitter.com/intent/tweet?text=%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8%E3%81%AE%E6%9C%80%E9%81%A9%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%80%81%E7%A7%81%E3%81%AF%E3%81%93%E3%81%86%E6%80%9D%E3%81%86%EF%BC%81%20%23pokano%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8&url=https://kanesaka849.github.io/japan-wc-tactics/" target="_blank" style="display:inline-block;padding:14px 40px;background:var(--gold);color:#000;font-weight:700;font-size:16px;border-radius:8px;text-decoration:none;">&#120143; 投稿する</a>
+        </div>
     </div>
 </div>
 
@@ -880,6 +1371,13 @@
     </details>
 
     <details class="faq-item">
+        <summary>AIの戦術分析は本当に信頼できるの？</summary>
+        <div class="faq-answer">
+            AIは大量のデータから傾向を抽出するのが得意です。プロの戦術家の代わりにはなりませんが、データに基づいた客観的な視点を提供できます。本記事はあくまで「サッカー好きの思考実験」として楽しんでいただければ幸いです。
+        </div>
+    </details>
+
+    <details class="faq-item">
         <summary>セットプレーは本当にW杯で武器になるのか？</summary>
         <div class="faq-answer">
             W杯の得点の約30%はセットプレーから生まれており、特にトーナメント戦の接戦では決定的な差になります。データ分析に基づくセットプレー設計は、ブレントフォードやリバプールが既に大きな成果を上げています。日本代表もAI分析によるセットプレー革命を導入することで、得点力を大幅に向上させることが可能です。
@@ -889,14 +1387,21 @@
     <details class="faq-item">
         <summary>リレーショナルプレーとポジショナルプレーの違いは？</summary>
         <div class="faq-answer">
-            ポジショナルプレーはグアルディオラが体系化した、5レーンを均等に占有する空間的アプローチです。一方、リレーショナルプレーはデ・ゼルビらが提唱する、選手間の動的な関係性（距離感、角度、タイミング）に基づくアプローチです。日本代表には両者のハイブリッドが最適であり、完全版ではその具体的な実装方法を詳しく解説しています。
+            ポジショナルプレーはグアルディオラが体系化した、5レーンを均等に占有する空間的アプローチです。一方、リレーショナルプレーはデ・ゼルビらが提唱する、選手間の動的な関係性（距離感、角度、タイミング）に基づくアプローチです。日本代表には両者のハイブリッドが最適であり、日本人の協調性・連携意識の高さとリレーショナルプレーの親和性は特に高いと分析しています。
         </div>
     </details>
 
     <details class="faq-item">
-        <summary>日本代表のW杯2026の対戦相手は？</summary>
+        <summary>ポゼッション率が低くても勝てるのはなぜ？</summary>
         <div class="faq-answer">
-            グループFでオランダ、チュニジア、欧州プレーオフB勝者（ウクライナ/スウェーデン/ポーランド/アルバニアのいずれか）と対戦します。特にオランダ戦が最大の山場であり、完全版では対戦相手別の詳細な戦術プランを解説しています。
+            ボール保持率と勝率には直接的な因果関係がありません。重要なのは「ボールを持っていないとき」の守備組織と、「ボールを奪った瞬間」のトランジション速度です。日本代表の2022年W杯はまさにこれを証明しました。ポゼッション率74%をドイツに渡しながらも、トランジションの速さで勝利を収めました。
+        </div>
+    </details>
+
+    <details class="faq-item">
+        <summary>カットバックのxGが高いのはなぜ？</summary>
+        <div class="faq-answer">
+            カットバックはゴールに向かってシュートを打てるため、DFとGKが対応しにくいポジションからの攻撃になります。通常のクロスはゴールから離れる方向にヘディングで合わせる必要がありますが、カットバックはシュートの角度・精度ともに有利です。xG効率は通常のクロスの3〜5倍に達します。
         </div>
     </details>
 </div>
@@ -909,20 +1414,15 @@
     <p class="section-lead">AIによる徹底分析シリーズ。サッカー戦術だけでなく、学習戦略から科学実験まで、あらゆるテーマをデータドリブンに解き明かします。</p>
 
     <div class="related-articles">
-        <a href="https://note.com/pokano_ai" class="related-article-card" target="_blank">
-            <div class="rac-label">完全版</div>
-            <div class="rac-title">日本代表W杯2026戦術プラン（完全版）</div>
-            <div class="rac-desc">15,000字超の完全版。主戦術システム、プランA/B/C、スカッド26名、対戦相手別戦術、ゲームステート管理マトリクスまで全て収録。</div>
+        <a href="https://kanesaka849.github.io/dorodango/" class="related-article-card" target="_blank">
+            <div class="rac-label">AI分析シリーズ</div>
+            <div class="rac-title">光る泥だんごの作り方｜AIが科学的に分析した最強メソッド</div>
+            <div class="rac-desc">泥団子が丸くなる理由は惑星と同じ物理法則。材料科学・物理学・左官技術をAIが統合分析した、科学的に最強の泥団子の作り方。</div>
         </a>
         <a href="https://kanesaka849.github.io/todai-strategy/" class="related-article-card" target="_blank">
             <div class="rac-label">AI分析シリーズ</div>
             <div class="rac-title">偏差値60から東大現役合格｜科学的勉強法の完全戦略</div>
             <div class="rac-desc">350以上の論文をAIが分析。アクティブリコール、間隔反復、インターリービングなど科学的根拠に基づく最強の学習戦略を5,000時間の計画で完全解説。</div>
-        </a>
-        <a href="https://kanesaka849.github.io/dorodango/" class="related-article-card" target="_blank">
-            <div class="rac-label">AI分析シリーズ</div>
-            <div class="rac-title">光る泥だんごの作り方｜AIが科学的に分析した最強メソッド</div>
-            <div class="rac-desc">泥団子が丸くなる理由は惑星と同じ物理法則。材料科学・物理学・左官技術をAIが統合分析した、科学的に最強の泥団子の作り方。</div>
         </a>
     </div>
 </div>
@@ -937,9 +1437,8 @@
         本資料はAI（Claude）の支援を受けて作成されました。記載内容は著者の分析・見解であり、JFA等の公式見解ではありません。
     </p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px;">
-        <a href="https://note.com/pokano_ai" target="_blank" style="display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;font-weight:700;font-size:14px;border-radius:8px;text-decoration:none;">完全版をnoteで読む &rarr;</a>
+        <a href="https://twitter.com/intent/tweet?text=%E3%81%9F%E3%81%A0%E3%81%AE%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E5%A5%BD%E3%81%8D%E3%81%8CAI%E3%81%AB%E8%80%83%E3%81%88%E3%81%95%E3%81%9B%E3%81%9F%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8W%E6%9D%AF%E6%88%A6%E8%A1%93%E3%83%97%E3%83%A9%E3%83%B3&url=https://kanesaka849.github.io/japan-wc-tactics/&via=pokano_ai" target="_blank" style="display:inline-block;padding:12px 28px;background:#000;color:#fff;font-weight:700;font-size:14px;border-radius:8px;text-decoration:none;">&#120143; シェアする</a>
         <a href="https://www.buymeacoffee.com/kanesaka849" target="_blank" style="display:inline-block;padding:12px 28px;background:#FFDD00;color:#000;font-weight:700;font-size:14px;border-radius:8px;text-decoration:none;">&#9749; Buy me a coffee</a>
-        <a href="https://twitter.com/intent/tweet?text=%E3%81%9F%E3%81%A0%E3%81%AE%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E5%A5%BD%E3%81%8D%E3%81%8CAI%E3%81%AB%E8%80%83%E3%81%88%E3%81%95%E3%81%9B%E3%81%9F%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8W%E6%9D%AF%E6%88%A6%E8%A1%93%E3%83%97%E3%83%A9%E3%83%B3&url=https://kanesaka849.github.io/japan-wc-tactics/&via=jk_ai_lab" target="_blank" style="display:inline-block;padding:12px 28px;background:#000;color:#fff;font-weight:700;font-size:14px;border-radius:8px;text-decoration:none;">&#120143; シェアする</a>
     </div>
 </div>
 
@@ -949,7 +1448,7 @@
 // Scroll-based fade-in animation
 document.addEventListener('DOMContentLoaded', () => {
     // Active nav link
-    const sections = document.querySelectorAll('.section[id], .faq-section[id], .cta-section[id], .hook-callout[id]');
+    const sections = document.querySelectorAll('.section[id], .faq-section[id], .hook-callout[id]');
     const navLinks = document.querySelectorAll('nav a');
 
     const observer = new IntersectionObserver((entries) => {
@@ -982,7 +1481,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Fade-in animation
-    const fadeElements = document.querySelectorAll('.card, .toc-teaser-item, .faq-item');
+    const fadeElements = document.querySelectorAll('.card, .faq-item');
     const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
