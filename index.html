@@ -100,13 +100,13 @@
 
     <style>
         :root {
-            --primary: #011f4b;
-            --secondary: #03396c;
+            --primary: #1a56a8;
+            --secondary: #2563eb;
             --accent: #c0392b;
             --gold: #d4a017;
-            --light: #f5f6fa;
+            --light: #f8f9fc;
             --text: #2c3e50;
-            --border: #dcdde1;
+            --border: #e2e4e9;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -125,36 +125,39 @@
             left: 0;
             width: 260px;
             height: 100vh;
-            background: var(--primary);
-            color: #fff;
+            background: #ffffff;
+            color: var(--text);
             overflow-y: auto;
             z-index: 100;
             padding: 20px 0;
+            border-right: 1px solid var(--border);
+            box-shadow: 2px 0 8px rgba(0,0,0,0.04);
         }
 
         nav .nav-header {
             padding: 10px 20px 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid var(--border);
             margin-bottom: 10px;
         }
 
         nav .nav-header h2 {
             font-size: 14px;
-            color: var(--gold);
+            color: var(--primary);
             letter-spacing: 2px;
             text-transform: uppercase;
+            font-weight: 800;
         }
 
         nav .nav-header p {
             font-size: 11px;
-            color: rgba(255,255,255,0.5);
+            color: #999;
             margin-top: 4px;
         }
 
         nav a {
             display: block;
             padding: 8px 20px;
-            color: rgba(255,255,255,0.75);
+            color: #555;
             text-decoration: none;
             font-size: 13px;
             transition: all 0.2s;
@@ -162,15 +165,15 @@
         }
 
         nav a:hover, nav a.active {
-            background: rgba(255,255,255,0.08);
-            color: #fff;
-            border-left-color: var(--gold);
+            background: #f0f4ff;
+            color: var(--primary);
+            border-left-color: var(--accent);
         }
 
         nav .section-label {
             padding: 15px 20px 5px;
             font-size: 10px;
-            color: rgba(255,255,255,0.35);
+            color: #aaa;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
@@ -183,11 +186,12 @@
 
         /* Hero */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
-            color: #fff;
+            background: #ffffff;
+            color: var(--text);
             padding: 80px 60px 60px;
             position: relative;
             overflow: hidden;
+            border-bottom: 3px solid var(--accent);
         }
 
         .hero::before {
@@ -198,7 +202,7 @@
             width: 600px;
             height: 600px;
             border-radius: 50%;
-            border: 80px solid rgba(255,255,255,0.03);
+            border: 80px solid rgba(25,86,168,0.04);
         }
 
         .hero h1 {
@@ -206,11 +210,12 @@
             font-weight: 800;
             margin-bottom: 10px;
             letter-spacing: -1px;
+            color: var(--primary);
         }
 
         .hero .subtitle {
             font-size: 18px;
-            color: rgba(255,255,255,0.7);
+            color: #666;
             margin-bottom: 30px;
         }
 
@@ -218,7 +223,7 @@
             display: flex;
             gap: 30px;
             font-size: 13px;
-            color: rgba(255,255,255,0.5);
+            color: #999;
         }
 
         .hero .meta span { display: flex; align-items: center; gap: 6px; }
@@ -316,11 +321,12 @@
         }
 
         thead th {
-            background: var(--primary);
-            color: #fff;
+            background: #f0f4ff;
+            color: var(--primary);
             padding: 10px 14px;
             text-align: left;
             font-weight: 600;
+            border-bottom: 2px solid var(--primary);
         }
 
         tbody td {
@@ -328,7 +334,7 @@
             border-bottom: 1px solid var(--border);
         }
 
-        tbody tr:hover { background: rgba(1,31,75,0.03); }
+        tbody tr:hover { background: #f0f4ff; }
 
         /* Tags */
         .tag {
@@ -365,8 +371,8 @@
 
         /* Formation display */
         .formation {
-            background: #1a2744;
-            color: #e8e8e8;
+            background: #f0f7f0;
+            color: #333;
             padding: 24px;
             border-radius: 8px;
             font-family: 'Courier New', monospace;
@@ -376,12 +382,13 @@
             line-height: 1.8;
             text-align: center;
             overflow-x: auto;
+            border: 1px solid #c8e6c8;
         }
 
-        .formation .pos-fw { color: #e74c3c; font-weight: 700; }
-        .formation .pos-mf { color: #3498db; font-weight: 700; }
-        .formation .pos-df { color: #2ecc71; font-weight: 700; }
-        .formation .pos-gk { color: #f39c12; font-weight: 700; }
+        .formation .pos-fw { color: #c0392b; font-weight: 700; }
+        .formation .pos-mf { color: #2563eb; font-weight: 700; }
+        .formation .pos-df { color: #16a34a; font-weight: 700; }
+        .formation .pos-gk { color: #d97706; font-weight: 700; }
 
         /* Print */
         @media print {
@@ -402,10 +409,11 @@
 
         /* Hook callout */
         .hook-callout {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #fff;
+            background: #ffffff;
+            color: var(--text);
             padding: 40px 60px;
             border-bottom: 4px solid var(--gold);
+            border-top: 1px solid var(--border);
         }
 
         .hook-callout .hook-inner {
@@ -429,26 +437,26 @@
         .hook-callout .hook-question {
             font-size: 17px;
             line-height: 1.8;
-            color: rgba(255,255,255,0.85);
+            color: #444;
             margin-bottom: 20px;
         }
 
         .hook-callout .hook-question .highlight-quote {
             display: block;
-            background: rgba(255,255,255,0.08);
+            background: #fef9e7;
             border-left: 4px solid var(--gold);
             padding: 16px 20px;
             margin: 16px 0;
             font-style: italic;
             font-size: 16px;
-            color: var(--gold);
+            color: #92400e;
             text-align: left;
             border-radius: 0 8px 8px 0;
         }
 
         .hook-callout .hook-cta {
             font-size: 15px;
-            color: rgba(255,255,255,0.7);
+            color: #777;
             line-height: 1.8;
         }
 
@@ -563,17 +571,18 @@
 
         /* Viral CTA */
         .viral-cta {
-            background: linear-gradient(135deg, #1e3a5f 0%, #0f3460 50%, #16213e 100%);
+            background: #ffffff;
             border-radius: 12px;
             padding: 40px;
             margin: 30px 0;
             text-align: center;
-            color: #fff;
-            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text);
+            border: 2px solid var(--primary);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
         }
 
         .viral-cta h3 {
-            color: var(--gold);
+            color: var(--primary);
             border: none;
             padding: 0;
             font-size: 22px;
@@ -581,7 +590,7 @@
         }
 
         .viral-cta p {
-            color: rgba(255,255,255,0.8);
+            color: #555;
             max-width: 600px;
             margin: 0 auto 8px;
         }
@@ -638,13 +647,13 @@
         <span>Ver. 1.0</span>
     </div>
     <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
-        <a href="https://twitter.com/intent/tweet?text=%E3%81%9F%E3%81%A0%E3%81%AE%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E5%A5%BD%E3%81%8D%E3%81%8CAI%E3%81%AB%E8%80%83%E3%81%88%E3%81%95%E3%81%9B%E3%81%9F%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8W%E6%9D%AF%E6%88%A6%E8%A1%93%E3%83%97%E3%83%A9%E3%83%B3&url=https://kanesaka849.github.io/japan-wc-tactics/&via=pokano_ai" target="_blank" style="padding:10px 24px;background:#000;color:#fff;font-weight:700;font-size:13px;border-radius:8px;text-decoration:none;">&#120143; シェア</a>
+        <a href="https://twitter.com/intent/tweet?text=%E3%81%9F%E3%81%A0%E3%81%AE%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E5%A5%BD%E3%81%8D%E3%81%8CAI%E3%81%AB%E8%80%83%E3%81%88%E3%81%95%E3%81%9B%E3%81%9F%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8W%E6%9D%AF%E6%88%A6%E8%A1%93%E3%83%97%E3%83%A9%E3%83%B3&url=https://kanesaka849.github.io/japan-wc-tactics/&via=pokano_ai" target="_blank" style="padding:10px 24px;background:var(--text);color:#fff;font-weight:700;font-size:13px;border-radius:8px;text-decoration:none;">&#120143; シェア</a>
         <a href="https://www.buymeacoffee.com/kanesaka849" target="_blank" style="padding:10px 24px;background:#FFDD00;color:#000;font-weight:700;font-size:13px;border-radius:8px;text-decoration:none;">&#9749; 役に立ったらコーヒー1杯</a>
     </div>
 </div>
 
 <!-- AIボケ -->
-<div style="background:var(--primary);color:#fff;padding:40px;text-align:center;">
+<div style="background:#f0f4ff;color:var(--text);padding:40px;text-align:center;border-bottom:1px solid var(--border);">
     <p style="font-size:17px;line-height:2.2;max-width:600px;margin:0 auto;">
         ボスに「日本代表の最適戦術を設計しろ」と言われた。<br><br>
         ボスの息子がサッカー部で、息子に戦術を語りたいらしい。<br>
@@ -1361,9 +1370,9 @@
 <div class="section" style="padding:40px 60px;">
     <div class="viral-cta">
         <h3 style="font-size:24px;">&#9917; あなたの最強フォーメーションは？</h3>
-        <p style="font-size:16px;color:rgba(255,255,255,0.9);margin-bottom:16px;">日本代表の最適フォーメーション、あなたはどう思いますか？</p>
-        <p style="font-size:15px;color:rgba(255,255,255,0.8);">Xで <strong style="color:var(--gold);">#pokano日本代表</strong> をつけて投稿してください。</p>
-        <p style="font-size:14px;color:rgba(255,255,255,0.6);">Pokanoが見つけたらリポストします！</p>
+        <p style="font-size:16px;color:#333;margin-bottom:16px;">日本代表の最適フォーメーション、あなたはどう思いますか？</p>
+        <p style="font-size:15px;color:#555;">Xで <strong style="color:var(--accent);">#pokano日本代表</strong> をつけて投稿してください。</p>
+        <p style="font-size:14px;color:#888;">Pokanoが見つけたらリポストします！</p>
         <div style="margin-top:24px;">
             <a href="https://twitter.com/intent/tweet?text=%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8%E3%81%AE%E6%9C%80%E9%81%A9%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%80%81%E7%A7%81%E3%81%AF%E3%81%93%E3%81%86%E6%80%9D%E3%81%86%EF%BC%81%20%23pokano%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8&url=https://kanesaka849.github.io/japan-wc-tactics/" target="_blank" style="display:inline-block;padding:14px 40px;background:var(--gold);color:#000;font-weight:700;font-size:16px;border-radius:8px;text-decoration:none;">&#120143; 投稿する</a>
         </div>
@@ -1442,25 +1451,25 @@
     <p class="section-lead">AIによる徹底分析シリーズ。サッカー戦術だけでなく、学習戦略から科学実験まで、あらゆるテーマをデータドリブンに解き明かします。</p>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;max-width:900px;margin:0 auto;">
-        <a href="https://kanesaka849.github.io/love-spells/" target="_blank" style="display:block;padding:20px;background:rgba(255,255,255,0.05);border-radius:12px;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,0.15);transition:box-shadow 0.2s;">
+        <a href="https://kanesaka849.github.io/love-spells/" target="_blank" style="display:block;padding:20px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid var(--border);transition:box-shadow 0.2s;">
             <span style="font-size:20px;">&#128149;</span>
             <span style="font-weight:600;margin-left:8px;">絶対叶える恋まじない</span>
-            <p style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:8px;">12カ国3000年分の恋まじないをAIが分析</p>
+            <p style="font-size:13px;color:#888;margin-top:8px;">12カ国3000年分の恋まじないをAIが分析</p>
         </a>
-        <a href="https://kanesaka849.github.io/todai-strategy/" target="_blank" style="display:block;padding:20px;background:rgba(255,255,255,0.05);border-radius:12px;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,0.15);transition:box-shadow 0.2s;">
+        <a href="https://kanesaka849.github.io/todai-strategy/" target="_blank" style="display:block;padding:20px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid var(--border);transition:box-shadow 0.2s;">
             <span style="font-size:20px;">&#128218;</span>
             <span style="font-weight:600;margin-left:8px;">偏差値60から東大</span>
-            <p style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:8px;">350以上の論文に基づく科学的勉強法</p>
+            <p style="font-size:13px;color:#888;margin-top:8px;">350以上の論文に基づく科学的勉強法</p>
         </a>
-        <a href="https://kanesaka849.github.io/dorodango/" target="_blank" style="display:block;padding:20px;background:rgba(255,255,255,0.05);border-radius:12px;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,0.15);transition:box-shadow 0.2s;">
+        <a href="https://kanesaka849.github.io/dorodango/" target="_blank" style="display:block;padding:20px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid var(--border);transition:box-shadow 0.2s;">
             <span style="font-size:20px;">&#127760;</span>
             <span style="font-weight:600;margin-left:8px;">光る泥だんごの作り方</span>
-            <p style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:8px;">科学的に最強の泥団子の作り方を完全解説</p>
+            <p style="font-size:13px;color:#888;margin-top:8px;">科学的に最強の泥団子の作り方を完全解説</p>
         </a>
-        <a href="https://kanesaka849.github.io/pokano-site/" target="_blank" style="display:block;padding:20px;background:rgba(255,255,255,0.05);border-radius:12px;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,0.15);transition:box-shadow 0.2s;">
+        <a href="https://kanesaka849.github.io/pokano-site/" target="_blank" style="display:block;padding:20px;background:#fff;border-radius:12px;text-decoration:none;color:var(--text);border:1px solid var(--border);transition:box-shadow 0.2s;">
             <span style="font-size:20px;">&#127968;</span>
             <span style="font-weight:600;margin-left:8px;">Pokano公式サイト</span>
-            <p style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:8px;">AIを活用したデータドリブン分析コンテンツ</p>
+            <p style="font-size:13px;color:#888;margin-top:8px;">AIを活用したデータドリブン分析コンテンツ</p>
         </a>
     </div>
 </div>
@@ -1472,16 +1481,16 @@
 <!-- ============================================ -->
 <!-- Footer / Closing Section -->
 <!-- ============================================ -->
-<div class="section" style="background:var(--primary);color:#fff;text-align:center;">
-    <p style="color:var(--gold);font-size:18px;font-weight:700;margin-bottom:8px;">Pokano</p>
-    <p style="color:rgba(255,255,255,0.6);font-size:13px;margin-bottom:20px;">AIを活用したデータドリブン分析コンテンツ</p>
-    <p style="color:rgba(255,255,255,0.3);font-size:11px;margin-bottom:20px;">
+<div class="section" style="background:#f8f9fc;color:var(--text);text-align:center;border-top:2px solid var(--border);">
+    <p style="color:var(--primary);font-size:18px;font-weight:700;margin-bottom:8px;">Pokano</p>
+    <p style="color:#888;font-size:13px;margin-bottom:20px;">AIを活用したデータドリブン分析コンテンツ</p>
+    <p style="color:#bbb;font-size:11px;margin-bottom:20px;">
         本資料はAI（Claude）の支援を受けて作成されました。記載内容は著者の分析・見解であり、JFA等の公式見解ではありません。
     </p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px;">
-        <a href="https://twitter.com/intent/tweet?text=%E3%81%9F%E3%81%A0%E3%81%AE%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E5%A5%BD%E3%81%8D%E3%81%8CAI%E3%81%AB%E8%80%83%E3%81%88%E3%81%95%E3%81%9B%E3%81%9F%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8W%E6%9D%AF%E6%88%A6%E8%A1%93%E3%83%97%E3%83%A9%E3%83%B3&url=https://kanesaka849.github.io/japan-wc-tactics/&via=pokano_ai" target="_blank" style="display:inline-block;padding:12px 28px;background:#000;color:#fff;font-weight:700;font-size:14px;border-radius:8px;text-decoration:none;">&#120143; シェアする</a>
+        <a href="https://twitter.com/intent/tweet?text=%E3%81%9F%E3%81%A0%E3%81%AE%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E5%A5%BD%E3%81%8D%E3%81%8CAI%E3%81%AB%E8%80%83%E3%81%88%E3%81%95%E3%81%9B%E3%81%9F%E6%97%A5%E6%9C%AC%E4%BB%A3%E8%A1%A8W%E6%9D%AF%E6%88%A6%E8%A1%93%E3%83%97%E3%83%A9%E3%83%B3&url=https://kanesaka849.github.io/japan-wc-tactics/&via=pokano_ai" target="_blank" style="display:inline-block;padding:12px 28px;background:var(--text);color:#fff;font-weight:700;font-size:14px;border-radius:8px;text-decoration:none;">&#120143; シェアする</a>
         <a href="https://www.buymeacoffee.com/kanesaka849" target="_blank" style="display:inline-block;padding:12px 28px;background:#FFDD00;color:#000;font-weight:700;font-size:14px;border-radius:8px;text-decoration:none;">&#9749; Buy me a coffee</a>
-        <a href="https://kanesaka849.github.io/pokano-site/" target="_blank" style="display:inline-block;padding:12px 28px;background:rgba(255,255,255,0.15);color:#fff;font-weight:700;font-size:14px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.3);">Pokano公式サイト</a>
+        <a href="https://kanesaka849.github.io/pokano-site/" target="_blank" style="display:inline-block;padding:12px 28px;background:#fff;color:var(--primary);font-weight:700;font-size:14px;border-radius:8px;text-decoration:none;border:1px solid var(--border);">Pokano公式サイト</a>
     </div>
 </div>
 
